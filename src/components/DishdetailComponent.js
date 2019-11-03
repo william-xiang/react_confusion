@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, CardBody, CardImg, CardText, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import CommentForm from './CommentFormComponent';
 
 function RenderDish({ dish }) {
     return (
@@ -27,7 +28,7 @@ function RenderComments({ comments }) {
         });
     }
 
-    commentsView = <div><h3>Comments</h3>{commentsView}</div>;
+    commentsView = <div><h3>Comments</h3>{commentsView}<CommentForm /></div>;
     return commentsView;
 }
 
