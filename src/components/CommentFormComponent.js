@@ -44,8 +44,7 @@ class CommentForm extends Component {
                                         validators={
                                             {
                                                 required,
-                                                minLength: minLength(3),
-                                                maxLength: maxLength(15)
+                                                isNumber
                                             }
                                         }
                                     />
@@ -55,8 +54,7 @@ class CommentForm extends Component {
                                         show="touched"
                                         messages={{
                                             required: 'Required',
-                                            minLength: 'Must be greater than 2 characters',
-                                            maxLength: 'Must be 15 characters or less'
+                                            isNumber: 'Must be a number'
                                         }}
                                     />
                                 </Col>
