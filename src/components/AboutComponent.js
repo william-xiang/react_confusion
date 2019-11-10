@@ -1,7 +1,7 @@
 import React from 'react';
-import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import DishDetail from './DishdetailComponent';
+import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
+import { baseUrl } from '../shared/baseUrl';
 
 function RenderLeader(props) {
     return (props.leaders.map((leader) => {
@@ -9,7 +9,7 @@ function RenderLeader(props) {
             <div key={leader.id} className="col-12 mt-5">
                 <Media tag="li">
                     <Media left middle>
-                        <Media object src={leader.image} alt={leader.name} />
+                        <Media object src={baseUrl + leader.image} alt={leader.name} />
                     </Media>
                     <Media body className="ml-5">
                         <Media heading>{leader.name}</Media>
@@ -23,13 +23,6 @@ function RenderLeader(props) {
 }
 
 function About(props) {
-
-    const leaders = props.leaders.map((leader) => {
-        return (
-            <p>Leader {leader.name}</p>
-        );
-    });
-
     return (
         <div className="container">
             <div className="row">
@@ -86,7 +79,7 @@ function About(props) {
                 </div>
                 <div className="col-12">
                     <Media list>
-                        <RenderLeader leaders={props.leaders} />
+                        <RenderLeader leaders={props.leaders.leaders} />
                     </Media>
                 </div>
             </div>
