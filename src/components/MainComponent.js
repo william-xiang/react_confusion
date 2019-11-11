@@ -47,7 +47,7 @@ class Main extends Component {
                 <Home
                     dish={this.props.dishes.dishes.filter((dish) => dish.featured)[0]}
                     dishesLoading={this.props.dishes.isLoading}
-                    dishErrMess={this.props.dishes.errMess}
+                    dishesErrMess={this.props.dishes.errMess}
                     promotion={this.props.promotions.promotions.filter((promo) => promo.featured)[0]}
                     promosLoading={this.props.promotions.isLoading}
                     promosErrMess={this.props.promotions.errMess}
@@ -72,6 +72,16 @@ class Main extends Component {
             );
         };
 
+        const Leaders = () => {
+            return (
+                <About
+                    leaders={this.props.leaders.leaders}
+                    leadersLoading={this.props.leaders.isLoading}
+                    leadersErrMess={this.props.leaders.errMess}
+                />
+            );
+        };
+
         return (
             <div>
                 <Header />
@@ -80,7 +90,7 @@ class Main extends Component {
                     <Route exact path="/menu" component={() => <Menu dishes={this.props.dishes} />} />
                     <Route exact path="/contactus" component={() => <Contact resetFeedbackForm={this.props.resetFeedbackForm} />} />
                     <Route path="/menu/:dishId" component={DishWithId} />
-                    <Route path="/aboutus" component={() => <About leaders={this.props.leaders} />} />
+                    <Route path="/aboutus" component={Leaders} />} />
                     {/* use Redirect to define a default route */}
                     <Redirect to="/home" />
                 </Switch>
