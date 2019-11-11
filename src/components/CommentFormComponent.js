@@ -30,7 +30,7 @@ class CommentForm extends Component {
     render() {
         return (
             <React.Fragment>
-                <Button color="btn btn-outline-secondary" onClick={this.toggleModal}><span class="fa fa-pencil" aria-hidden="true"></span>Submit Comment</Button>
+                <Button color="btn btn-outline-secondary" onClick={this.toggleModal}><span className="fa fa-pencil" aria-hidden="true"></span>Submit Comment</Button>
                 <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                     <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
                     <ModalBody>
